@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    </head>
+
+  <body>
+   
+   Text 1:
+   <input id="str1" type="text" name="">
+   Text 2:
+   <input id="str2" type="text" name="">
+   <p></p>
+   <button id="demo" type="<<"> << </button>
+   <button id="demo1" type="||"> || </button>
+   <button id="demo2" type=">>"> >> </button>
+   <script>
+    document.getElementById("demo").onclick = function()
+  {
+var elem1=document.getElementById("str1").value;
+var elem2=document.getElementById("str2").value;
+var demo = elem1.split(""); //hello
+var temp="";
+for(var i=0;i<elem1.length-1;i++)
+{
+  temp += demo[i+1]; 
+console.log(temp);        
+}  
+//console.log(demo[0]);
+if( demo[0] !=null){
+    elem2 += demo[0]; 
+  }
+document.getElementById("str2").value=elem2;
+//console.log(temp);
+document.getElementById("str1").value=temp;
+}
+document.getElementById("demo2").onclick = function()
+{
+ var elem3 = document.getElementById("str2").value;
+ var elem4 = document.getElementById("str1").value;
+ var disp = elem3.split("");
+ var temp1 = "";
+ for(var j=0;j<elem3.length-1;j++)
+ {
+  temp1 += disp[j];
+ }
+  if(elem3.length>0)
+  {
+   elem4 = disp[elem3.length-1] + elem4;
+  }
+  document.getElementById("str1").value=elem4;
+  document.getElementById("str2").value=temp1;
+ console.log(temp1);
+}
+document.getElementById("demo1").onclick = function()
+{
+  document.getElementById("demo").disabled= true;
+  document.getElementById("demo2").disabled =true;
+}
+</script>
+</body>
+
+</html>
